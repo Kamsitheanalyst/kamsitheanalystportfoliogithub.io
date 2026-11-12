@@ -278,15 +278,22 @@ h1, h2, h3 {
 .all-projects {
     display: inline-block;
     margin-top: 30px;
-    color: var(--teal);
+    color: #ffffff;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 20px;
+    padding: 14px 30px;
+    background: #071a3a;
+    border-radius: 999px;
     text-decoration: none;
 }
 
-
+.all-projects:hover {
+    background: #27d3f0;
+    color: #071a3a;
+}
+    
 .project-disclaimer {
-    font-size: 15px;
+    font-size: 12px;
     color: var(--muted);
     margin-top: 20px;
     line-height: 1.6;
