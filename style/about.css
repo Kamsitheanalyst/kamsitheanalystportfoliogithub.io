@@ -281,18 +281,12 @@ h1, h2, h3 {
     color: var(--teal);
     font-weight: 700;
     font-size: 30px;
-    padding: 14px 30px;
-    border-radius: 999px;
     text-decoration: none;
 }
 
-.all-projects {
-    background: #27d3f0;
-    color: #ffffff; 
-}
 
 .project-disclaimer {
-    font-size: 11px;
+    font-size: 15px;
     color: var(--muted);
     margin-top: 20px;
     line-height: 1.6;
