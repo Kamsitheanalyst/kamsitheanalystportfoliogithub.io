@@ -274,59 +274,21 @@ h1, h2, h3 {
     color: #a87928;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.project-card {
-    border: 1px solid var(--border);
-    padding: 25px;
-    border-radius: 8px;
-    transition: .3s;
-}
-
-.project-type {
-    color: var(--teal);
-    font-size: 9px;
-    letter-spacing: 1px;
-    font-weight: 800;
-}
-
-.project-card h3 {
-    font-size: 18px;
-    margin: 17px 0;
-}
-
-.project-card p {
-    color: var(--text);
-    font-size: 12px;
-    line-height: 1.8;
-}
-
-.project-tools {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.project-tools span {
-    background: var(--light);
-    padding: 7px 10px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 600;
-}
 
 .all-projects {
     display: inline-block;
     margin-top: 30px;
     color: var(--teal);
     font-weight: 700;
-    font-size: 13px;
+    font-size: 26px;
+    padding: 14px 30px;
+    border-radius: 999px;
     text-decoration: none;
+}
+
+.all-projects {
+    background: #27d3f0;
+    color: #ffffff; 
 }
 
 .project-disclaimer {
