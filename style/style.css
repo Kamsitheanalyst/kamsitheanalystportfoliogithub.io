@@ -17,16 +17,25 @@ body {
     line-height: 1.7;
 }
 
+:root {
+    --navy: #071a3a;
+    --navy-light: #0b2a5b;
+    --cyan: #27d3f0;
+    --soft: #eef4fc;
+    --text-muted: #667386;
+}
+
 /* NAVIGATION */
 
 header {
-    border-bottom: 1px solid #edf0f3;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar {
     max-width: 1200px;
     margin: auto;
-    padding: 22px 7%;
+    padding: 20px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,77 +44,94 @@ header {
 .logo {
     font-size: 25px;
     font-weight: 800;
-    color: #14283f;
+    color: #ffffff;
     text-decoration: none;
     letter-spacing: 2px;
 }
 
 .logo span {
-    color: #19a89b;
+    color: var(--cyan);
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 8px;
     list-style: none;
 }
 
 .nav-links a {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 999px;
     text-decoration: none;
-    color: #435166;
+    color: #dbe6f7;
     font-size: 14px;
     font-weight: 600;
 }
 
 .nav-links a:hover {
-    color: #19a89b;
+    color: var(--cyan);
+}
+
+.nav-links a.active {
+    background: var(--navy-light);
+    color: #ffffff;
 }
 
 /* HERO SECTION */
 
 .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-inner {
     max-width: 1200px;
     margin: auto;
-    padding: 110px 7%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
+    align-items: stretch;
+    min-height: 540px;
 }
 
 .hero-content {
-    max-width: 650px;
+    flex: 1;
+    padding: 80px 0 80px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.eyebrow,
-.section-label {
-    color: #19a89b;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+.eyebrow {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 0;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 6vw, 68px);
-    line-height: 1.15;
-    margin-bottom: 22px;
-    color: #14283f;
-}
-
-.hero h1 span {
-    color: #19a89b;
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 14px;
+    color: #ffffff;
 }
 
 .hero h2 {
-    font-size: 19px;
-    color: #435166;
-    margin-bottom: 18px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    color: var(--cyan);
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 14px;
 }
 
 .hero-description {
-    color: #667386;
-    max-width: 550px;
+    color: #c9d6ea;
+    max-width: 480px;
     margin-bottom: 30px;
 }
 
@@ -118,50 +144,53 @@ header {
 }
 
 .btn {
-    padding: 13px 23px;
-    border-radius: 5px;
+    padding: 13px 24px;
+    border-radius: 999px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
 }
 
 .primary-btn {
-    background: #14283f;
-    color: white;
+    background: var(--cyan);
+    color: var(--navy);
 }
 
 .primary-btn:hover {
-    background: #19a89b;
+    background: #ffffff;
 }
 
 .secondary-btn {
-    border: 1px solid #14283f;
-    color: #14283f;
+    border: 1px solid #ffffff;
+    color: #ffffff;
 }
 
 .secondary-btn:hover {
-    background: #14283f;
-    color: white;
+    background: #ffffff;
+    color: var(--navy);
 }
 
-/* HERO VISUAL */
+/* HERO PHOTO */
 
 .hero-visual {
-    width: 320px;
-    height: 400px;
-    flex-shrink: 0;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #eaf5f4;
-    box-shadow: 0 15px 40px rgba(20, 40, 63, 0.12);
+    flex: 0 0 45%;
+    position: relative;
 }
 
 .hero-photo {
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
     object-position: center top;
+    display: block;
+}
+
+/* fades the photo into the navy background on the left edge */
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--navy-light) 0%, rgba(11, 42, 91, 0) 40%);
 }
 
 /* ABOUT SECTION */
@@ -175,18 +204,26 @@ header {
 .about-preview h2,
 .expertise h2 {
     font-size: 34px;
-    color: #14283f;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.section-label {
+    color: #0f9fb8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .about-preview > p:not(.section-label) {
     max-width: 700px;
     margin: 0 auto 25px;
-    color: #667386;
+    color: var(--text-muted);
 }
 
 .text-link {
-    color: #19a89b;
+    color: #0f9fb8;
     text-decoration: none;
     font-weight: bold;
 }
@@ -209,28 +246,50 @@ header {
 .expertise-card {
     padding: 30px;
     text-align: left;
-    border: 1px solid #edf0f3;
-    border-radius: 8px;
+    background: var(--soft);
+    border-radius: 12px;
 }
 
 .expertise-card h3 {
-    color: #14283f;
+    color: var(--navy);
     margin-bottom: 12px;
 }
 
 .expertise-card p {
-    color: #667386;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
 /* FOOTER */
 
 footer {
-    background: #14283f;
-    color: white;
-    text-align: center;
-    padding: 25px;
+    background: var(--soft);
+    border-top: 1px solid #dbe6f7;
+    padding: 25px 7%;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     font-size: 13px;
+    color: #435166;
+}
+
+.social-links {
+    display: flex;
+    gap: 14px;
+}
+
+.social-links a {
+    color: var(--navy);
+}
+
+.social-links a:hover {
+    color: #0f9fb8;
 }
 
 /* MOBILE RESPONSIVENESS */
@@ -239,32 +298,52 @@ footer {
 
     .navbar {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
     .nav-links {
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 4px;
     }
 
-    .hero {
-        flex-direction: column;
-        padding: 75px 7%;
+    .nav-links a {
+        padding: 7px 12px;
+    }
+
+    /* photo on top, text below */
+    .hero-inner {
+        flex-direction: column-reverse;
+        min-height: 0;
+    }
+
+    .hero-visual {
+        flex: none;
+        height: 360px;
+    }
+
+    .hero-visual::before {
+        background: linear-gradient(to bottom, rgba(11, 42, 91, 0) 55%, var(--navy-light) 100%);
+    }
+
+    .hero-content {
+        padding: 10px 7% 60px;
         text-align: center;
+        align-items: center;
     }
 
     .hero-buttons {
         justify-content: center;
     }
 
-    .hero-visual {
-        width: 100%;
-        max-width: 300px;
-    }
-
     .expertise-grid {
         grid-template-columns: 1fr;
     }
 
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
+Displaying index.html.
